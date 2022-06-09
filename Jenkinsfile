@@ -6,7 +6,7 @@ pipeline{
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-id', url: 'https://github.com/techopsteam4/project-9-pipeline.git']]])
       }
     }
-    stages('parallel job1'){
+    stage('parallel job1'){
       parallel{
         stage('sub-job1'){
           steps{

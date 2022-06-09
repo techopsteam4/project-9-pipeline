@@ -25,5 +25,27 @@ pipeline{
         sh 'cat /etc/passwd'
       }
     }
+    stage('parallel-job'){
+      parallel{
+        stage('sub-job3'){
+          steps{
+            echo 'action 3'
+            sh 'ps -ef'
+          }
+        }
+        stage('sub-job4'){
+          steps{
+            echo 'action 4'
+            sh 'cal 2025'
+          }
+        }
+      }
+    }
+    stage('code-deploy'){
+      steps{
+        sh 'tail -5 /etc/passwd'
+        sh 'head -3 /etc/passwd'
+      }
+    }
   }
 }

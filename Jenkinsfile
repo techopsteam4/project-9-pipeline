@@ -10,7 +10,7 @@ pipeline{
       parallel{
         stage('sub-job1'){
           steps{
-            sh 'system start Jenkins'
+            sh 'sudo systemctl status Jenkins'
             sh 'lsblk'
           }
         }

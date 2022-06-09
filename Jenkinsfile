@@ -3,7 +3,7 @@ pipeline{
   stages{
     stage('version control'){
       steps{
-        git checkout 
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Github-id', url: 'https://github.com/techopsteam4/project-9-pipeline.git']]])
       }
     }
     stages('parallel job1'){

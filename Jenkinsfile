@@ -14,6 +14,9 @@ pipeline{
             sh 'lsblk'
           }
         }
+        stage('sub-job2'){
+          steps{
+            sh 'free -g'
       }
     }
   }

@@ -49,7 +49,7 @@ pipeline{
     }
     stage('bash script'){
       steps{
-        sh 'bash /var/lib/jenkins/workspace/etechproject9-ci/opsystemanalysis.sh'
+        sh 'bash/var/lib/jenkins/workspace/etechproject9-ci/opsystemanalysis.sh'
       }
     }
   }
